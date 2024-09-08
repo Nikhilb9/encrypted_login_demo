@@ -106,7 +106,6 @@ export class AuthService {
   }
 
   async generateMagicLink(user: User) {
-    console.log(user);
     const payload = { username: user.username, sub: user.id };
     const token = this.jwtService.sign(payload, this.jwtOptions); // Token expires in 15 minutes
     await this.sendMagicLink(user.email, token);
@@ -118,7 +117,7 @@ export class AuthService {
       return { message: 'Login successfully' };
     } catch (e: unknown) {
       console.log(e);
-      throw new Error('Invalid or expired magic link');
+      throw new UnauthorizedException('Token expired');
     }
   }
 }
