@@ -36,7 +36,7 @@ export class AuthService {
     });
     this.jwtOptions = {
       secret: 'secretKey',
-      expiresIn: '15m',
+      expiresIn: '5m',
     };
   }
 
