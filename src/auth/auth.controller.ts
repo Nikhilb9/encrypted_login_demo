@@ -21,10 +21,6 @@ export class AuthController {
 
   @Get('validate/link')
   @ApiOkResponse({ status: 200 })
-  @ApiBody({
-    type: LoginDto,
-    description: 'Validate Link',
-  })
   async validateLink(
     @Query() query: { token: string },
   ): Promise<{ message: string }> {

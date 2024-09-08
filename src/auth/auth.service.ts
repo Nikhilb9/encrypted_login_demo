@@ -31,7 +31,7 @@ export class AuthService {
       service: 'gmail',
       auth: {
         user: 'nikhilbaisoya9@gmail.com',
-        pass: 'testing',
+        pass: 'mviaplxepkxfxzvh', // This password automatically expired after tomorrow
       },
     });
     this.jwtOptions = {
@@ -93,7 +93,7 @@ export class AuthService {
   }
 
   async sendMagicLink(email: string, token: string) {
-    const link = `localhost:3000/auth/validate/link?token=${token}`;
+    const link = `http://www.localhost:3000/auth/validate/link?token=${token}`;
     const mailOptions = {
       from: 'nikhilbaisoya9@gmail.com',
       to: email,
